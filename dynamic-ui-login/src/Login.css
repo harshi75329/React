@@ -1,0 +1,102 @@
+/* Login.css */
+
+/* Centering the login container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+  }
+  
+  /* Login title styling */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Styling the form */
+  .login-form {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  /* Input field container */
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  /* Label styling */
+  .input-group label {
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Input field styling */
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  .login-button{
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .login-button:hover {
+    background-color: #2563eb;
+  }
+
+  /* Small and cute logout button */
+.logout-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .logout-button:hover {
+    background-color: #e63939;
+  }
+  
+  
+  /* Home page container */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e5e7eb;
+  }
+  
+  .home-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
