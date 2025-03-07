@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProductCatalogue.css";
 
-function ProductCatalogue() {
+function ProductCatalogue({ addToCart }) {
   const navigate = useNavigate();
 
-  // Prevent unauthorized access
   useEffect(() => {
     if (!localStorage.getItem("loggedIn")) {
       navigate("/");
@@ -19,7 +18,6 @@ function ProductCatalogue() {
     { id: 4, name: "Smart Watch", price: "$300", image: "smartwatch.jpg" },
   ];
 
-  // Handle Logout
   const handleLogout = () => {
     localStorage.removeItem("loggedIn");
     navigate("/");
@@ -27,19 +25,23 @@ function ProductCatalogue() {
 
   return (
     <div className="product-container">
-      <h2>Product Catalogue</h2>
+      <h2 className="fade-in">Product Catalogue</h2>
       <div className="product-list">
         {products.map((product) => (
-          <div key={product.id} className="product-item">
+          <div key={product.id} className="product-item slide-in">
             <img src={product.image} alt={product.name} className="product-image" />
             <p className="product-name">{product.name}</p>
             <p className="product-price">{product.price}</p>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" onClick={() => addToCart(product)}>
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
-      {/* Logout button moved to bottom */}
-      <div className="logout-container">
+
+      {/* Buttons at Bottom with Spacing */}
+      <div className="button-container">
+        <button className="cart-button" onClick={() => navigate("/cart")}>Go to Cart</button>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
