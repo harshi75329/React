@@ -1,35 +1,39 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./App.css";
+import "./styles.css"; // Importing the external CSS file
 
 const App = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [posts, setPosts] = useState([]);
+  const [isVisible, setIsVisible] = useState(false); // Track text visibility
+  const [data, setData] = useState([]); // Store API data
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts?_limit=5")
-      .then(response => setPosts(response.data))
-      .catch(error => console.error("Error fetching data:", error));
+    fetch("https://dummyjson.com/posts") // Fetch data from alternative API
+      .then((response) => response.json())
+      .then((json) => setData(json.posts.slice(0, 5))) // Store first 5 posts
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   return (
     <div className="container">
-      <button 
-        onClick={() => setIsVisible(!isVisible)} 
-        className="toggle-button"
-      >
+      {/* Toggle Button */}
+      <button className="toggle-button" onClick={() => setIsVisible(!isVisible)}>
         {isVisible ? "Hide" : "Show"} Text
       </button>
-      {isVisible && <p className="toggle-text">Hello! This is Group-2 mini project toggleable text.</p>}
-      
-      <h2 className="title">Posts from API:</h2>
+
+      {/* Show Text When Visible */}
+      {isVisible && <p className="toggle-text">This is some text that can be toggled.</p>}
+
+      {/* Fetch and Display API Data */}
+      <h2 className="heading">Fetched Posts</h2>
       <ul className="post-list">
-        {posts.map(post => (
-          <li key={post.id} className="post-item">{post.title}</li>
+        {data.map((post) => (
+          <li key={post.id} className="post-item">
+            <h3 className="post-title">{post.title}</h3>
+            <p className="post-body">{post.body}</p>
+          </li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default App;
+export default App;
