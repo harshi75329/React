@@ -1,0 +1,71 @@
+/* General Container */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Toggle Button */
+  .toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Toggle Text */
+  .toggle-text {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Heading */
+  .heading {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #444;
+    font-weight: bold;
+  }
+  
+  /* Post List */
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  /* Post Item */
+  .post-item {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Post Title */
+  .post-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Post Body */
+  .post-body {
+    font-size: 16px;
+    color: #555;
+  }
